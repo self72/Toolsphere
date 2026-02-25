@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgot Password - AuthSystem</title>
+    <link rel="stylesheet" href="both.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <div class="form-header">
+                <h1>Reset Password</h1>
+                <p>Enter your email to receive reset instructions</p>
+            </div>
+            
+            <form id="forgotPasswordForm" class="auth-form">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required placeholder="Enter your email address">
+                    <span class="error-message" id="emailError"></span>
+                </div>
+                
+                <div id="messageArea" class="message-area"></div>
+                
+                <button type="submit" class="btn btn-primary">Send Reset Link</button>
+                
+                <div class="form-footer">
+                    <p><a href="login.html" class="back-link">← Back to Login</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <script src="account.js"></script>
+</body>
+</html>

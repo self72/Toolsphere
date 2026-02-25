@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tools</title>
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f8faff;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    header {
+      padding: 40px 20px;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin: 0;
+    }
+
+    header p {
+      color: #777;
+    }
+
+    .search-box {
+      display: flex;
+      justify-content: center;
+      margin: 20px auto;
+      gap: 10px;
+    }
+
+    .search-box input {
+      padding: 10px 15px;
+      width: 300px;
+      border: 1px solid #ccc;
+      border-radius: 25px;
+      outline: none;
+    }
+
+    .search-box button {
+      padding: 10px 20px;
+      background: #0d8cf0;
+      color: #fff;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+    }
+
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      padding: 30px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .tool-card {
+      background: #fff;
+      border-radius: 15px;
+      padding: 20px;
+      text-align: left;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+    }
+
+    .tool-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .tool-card h3 {
+      margin: 10px 0 5px;
+    }
+
+    .tool-card span {
+      color: #888;
+      font-size: 0.9em;
+    }
+
+    .tool-card p {
+      color: #444;
+      font-size: 0.85em;
+    }
+
+    .icon {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .green { color: #28a745; }
+    .orange { color: #fd7e14; }
+    .blue { color: #007bff; }
+    .pink { color: #e83e8c; }
+    .purple { color: #6f42c1; }
+    .cyan { color: #17a2b8; }
+    .violet { color: #6610f2; }
+    .yellow { color: #ffc107; }
+    .red { color: #dc3545; }
+
+    footer {
+      background: #f1f1f1;
+      padding: 30px;
+      margin-top: 40px;
+    }
+
+    .footer-container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      text-align: left;
+      gap: 20px;
+    }
+
+    .footer-container h3, 
+    .footer-container h4 {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Tools</h1>
+    <p>Free Online File & Conversion Tools</p>
+  </header>
+
+  <!-- Search Box -->
+  <div class="search-box">
+    <input type="text" id="search" placeholder="Search tools...">
+    <button onclick="filterTools()"><i class="fa fa-search"></i> Search</button>
+  </div>
+
+  <!-- Tools Grid -->
+  <section class="tools-grid" id="toolsGrid">
+    <div class="tool-card">
+      <i class="fa-solid fa-file-excel icon green"></i>
+      <h3>Excel to PDF</h3>
+      <span>Converter Tools</span>
+      <p>Convert Excel to PDF</p>
+    </div>
+
+    <div class="tool-card">
+      <i class="fa-solid fa-file-csv icon orange"></i>
+      <h3>CSV to Excel</h3>
+      <span>Converter Tools</span>
+      <p>Convert CSV to Excel</p>
+    </div>
+
+    <div class="tool-card">
+      <i class="fa-solid fa-table-cells icon blue"></i>
+      <h3>Split Excel</h3>
+      <span>Converter Tools</span>
+      <p>Split into one or multiple Excel files</p>
+    </div>
+
+    <div class="tool-card">
+      <i class="fa-solid fa-file-code icon pink"></i>
+      <h3>XML to Excel</h3>
+      <span>Converter Tools</span>
+      <p>Convert XML to Excel</p>
+    </div>
+
+    <div class="tool-card">
+      <i class="fa-solid fa-code-branch icon green"></i>
+      <h3>JSON to XML</h3>
+      <span>Converter Tools</span>
+      <p>Convert JSON to XML</p>
+    </div>
+
+    <div class="tool-card">
+      <i class="fa-solid fa-code icon purple"></i>
+      <h3>XML to CSV</h3>
+      <span>Converter Tools</span>
+      <p>Convert XML to CSV</p>
+    </div>
+
+    <div class="tool-card">
+      <i class="fa-solid fa-file-excel icon cyan"></i>
+      <h3>Excel to CSV</h3>
+      <span>Converter Tools</span>
+      <p>Convert Excel to CSV</p>
+    </div>
+
+    <div class="tool-card">
+      <i class="fa-solid fa-file-lines icon orange"></i>
+      <h3>CSV to JSON</h3>
+      <span>Converter Tools</span>
+      <p>Convert CSV to JSON</p>
+    </div>
+
+    <div class="tool-card">
+      <i class="fa-solid fa-code-compare icon violet"></i>
+      <h3>XML to JSON</h3>
+      <span>Converter Tools</span>
+      <p>Convert XML to JSON</p>
+    </div>
+
+    <div class="tool-card">
+      <i class="fa-solid fa-file-import icon yellow"></i>
+      <h3>Excel to XML</h3>
+      <span>Converter Tools</span>
+      <p>Convert Excel to XML</p>
+    </div>
+
+    <div class="tool-card">
+      <i class="fa-solid fa-file-export icon red"></i>
+      <h3>CSV to XML</h3>
+      <span>Converter Tools</span>
+      <p>Convert CSV to XML</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div>
+        <h3>ToolSphere</h3>
+        <p>ToolSphere provides free online conversion, pdf, and other handy tools to help you solve problems of all types.</p>
+      </div>
+      <div>
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="code.html">Home</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Tools</h4>
+        <ul>
+          <li><a href="#">Essay Writer</a></li>
+          <li><a href="#">Image Generator</a></li>
+          <li><a href="#">PDF to JPG</a></li>
+          <li><a href="#">Split PDF</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    function filterTools() {
+      let input = document.getElementById("search").value.toLowerCase();
+      let cards = document.querySelectorAll(".tool-card");
+
+      cards.forEach(card => {
+        let text = card.innerText.toLowerCase();
+        if (text.includes(input)) {
+          card.style.display = "block";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    }
+
+    // Real-time filter as user types
+    document.getElementById("search").addEventListener("keyup", filterTools);
+  </script>
+</body>
+</html>
